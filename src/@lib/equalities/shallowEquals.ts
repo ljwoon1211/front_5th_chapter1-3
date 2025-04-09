@@ -4,9 +4,9 @@ export function shallowEquals<T>(objA: T, objB: T): boolean {
 
   // 2. 둘 중 하나라도 객체가 아닌 경우 처리
   if (
-    typeof objA !== 'object' ||
+    typeof objA !== "object" ||
     objA === null ||
-    typeof objB !== 'object' ||
+    typeof objB !== "object" ||
     objB === null
   ) {
     return false;
@@ -18,9 +18,6 @@ export function shallowEquals<T>(objA: T, objB: T): boolean {
 
   if (keysA.length !== keysB.length) return false;
 
-
   // 4. 모든 키에 대해 얕은 비교 수행
-  return keysA.every(key =>
-    objA[key] === objB[key]
-  );
+  return keysA.every((key) => objA[key] === objB[key]);
 }

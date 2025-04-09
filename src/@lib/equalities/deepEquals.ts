@@ -4,9 +4,9 @@ export function deepEquals<T>(objA: T, objB: T): boolean {
 
   // 1. 기본 타입이거나 null인 경우 처리
   if (
-    typeof objA !== 'object' ||
+    typeof objA !== "object" ||
     objA === null ||
-    typeof objB !== 'object' ||
+    typeof objB !== "object" ||
     objB === null
   ) {
     return false;
@@ -29,9 +29,5 @@ export function deepEquals<T>(objA: T, objB: T): boolean {
   // 객체의 키 개수가 다른 경우
   if (keysA.length !== keysB.length) return false;
 
-  return keysA.every((key) =>
-    deepEquals(
-      objA[key],
-      objB[key]
-    ))
+  return keysA.every((key) => deepEquals(objA[key], objB[key]));
 }
